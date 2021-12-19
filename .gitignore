@@ -1,0 +1,7 @@
+__pycache__/
+*.spec
+*.csv
+build/
+secrets.txt
+dist/
+.vscode/launch.json

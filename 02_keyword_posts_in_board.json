@@ -1,0 +1,7 @@
+{
+    "board_name": "image",
+    "start_index": 1,
+    "filters": [
+        { "type": "KEYWORD", "value": "如果" }
+    ]
+}
