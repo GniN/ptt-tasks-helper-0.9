@@ -16,7 +16,7 @@ if start_index <= 0:
     print(f'start_index 必須大於0')
     exit()
 
-output_rows = ['id,文章日期,文章標題,ip,link,推,噓,箭頭']
+output_rows = ['id,文章日期,文章標題,文章編號,ip,link,推,噓,箭頭']
 
 search_list = to_search_list(filters)
 
@@ -49,6 +49,7 @@ for current_index in range(start_index, newest_index + 1):
             author_id,
             str(post_info.date),
             str(post_info.title),
+            str(post_info.aid),
             str(post_info.ip),
             str(post_info.web_url),
             str(push_count),

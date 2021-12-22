@@ -2,6 +2,6 @@
     "board_name": "image",
     "start_index": 1,
     "filters": [
-        { "type": "KEYWORD", "value": "如果" }
+        { "type": "KEYWORD", "value": "如果一天有二十五小時" }
     ]
 }
