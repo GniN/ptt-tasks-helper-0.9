@@ -10,6 +10,11 @@ def getUser(id):
     except PTT.exceptions.NoSuchUser:
         print('無此使用者')
         return None
+    except Exception as e:
+        print(e)
+        print('其他錯誤')
+        return None
+
 
 f = open(to_file_path('05_account_checker.txt'), 'r', encoding='utf-8')
 
@@ -47,8 +52,7 @@ for id in f:
         user_info_list.append( str(user.last_ip) ) #上次登入ip
         user_info_list.append( str(user.last_login) ) #上次登入日期
         user_info_list.append( str(verify_text) ) #認證
-        user_info_list.append( str(signature_file_first_line) ) #認證
-        
+        user_info_list.append( str(signature_file_first_line) ) #認證        
     
     output_rows.append(','.join(user_info_list))
 
