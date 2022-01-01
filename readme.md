@@ -105,8 +105,37 @@ hsuan0904:mysupersafepassword
 輸入請放在 
 05_account_checker.txt
 
-```python
-turtlesoup:33636:[活動] # 看板名稱:文章編號，請用分號分隔
+```txt
+hsuan0904
+```
+
+## 情況六
+
+輸入：一排ID
+
+輸出：同05，但多一個地理位置
+
+輸入請放在 
+06_account_checker_with_geolocation.txt
+
+```txt
+hsuan0904
+```
+
+## 情況七
+
+輸入：指定看板, 指定文章編號
+
+輸出：用戶資訊
+
+輸入請放在 
+07_vote_checker.json
+
+```json
+{
+    "board_name": "ComGame-New",
+    "post_number": 1444
+}
 ```
 
 ## 附註

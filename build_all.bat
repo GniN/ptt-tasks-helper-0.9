@@ -3,3 +3,5 @@ pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336
 pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336/Documents/projects/ptt-task-helper/03_post_id_count.py"
 pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336/Documents/projects/ptt-task-helper/04_post_keyword.py"
 pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336/Documents/projects/ptt-task-helper/05_account_checker.py"
+pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336/Documents/projects/ptt-task-helper/06_account_checker_with_geolocation.py"
+pyinstaller --noconfirm --onefile --console --no-embed-manifest  "C:/Users/t0336/Documents/projects/ptt-task-helper/07_vote_checker.py"
