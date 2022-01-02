@@ -1,0 +1,35 @@
+name: Package Application with Pyinstaller
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install packages
+      run: |
+        pip install -r requirements.txt
+
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./01_id_posts_in_board.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./02_keyword_posts_in_board.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./03_post_id_count.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./04_post_keyword.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./05_account_checker.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./06_account_checker_with_geolocation.py"
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./07_vote_checker.py"
+
+    - run: pyinstaller --noconfirm --onefile --console --no-embed-manifest  "./07_vote_checker.py"
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          ./dist/*

@@ -57,6 +57,9 @@ for row in support_rows + against_rows:
 
     user = getUser(id)
     user_info_list = [id]
+    if index % 300 == 0:
+        ptt_bot.logout()
+        ptt_bot = Bot()
     if user is not None:
         real_id = user.id.split(' ')[0]
         if real_id == id:
