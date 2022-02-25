@@ -143,3 +143,9 @@ hsuan0904
 ```
 pip install git+https://github.com/GniN/PyPtt.git
 ```
+
+自動發布版本
+```
+git tag -a v1.0.4 -m "new version 1.4" 
+git push origin --tags
+```

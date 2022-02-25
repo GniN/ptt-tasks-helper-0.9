@@ -27,11 +27,11 @@ def ipLocation(addr):
     #will load the json response into data
     return data['country']
 
-f = open(to_file_path('05_account_checker.txt'), 'r', encoding='utf-8')
+f = open(to_file_path('06_account_checker_with_geolocation.txt'), 'r', encoding='utf-8')
 
 index = 1
 
-output_rows = ['id,修正後id,正確id,登入次數,有效文章數,退文文章數,上次登入ip,上次登入日期,帳號認證,罰單狀況,地理位置']
+output_rows = ['id,修正後id,正確id,登入次數,有效文章數,退文文章數,上次登入ip,上次登入日期,帳號認證,經濟狀況,罰單狀況,地理位置']
 
 for id in f:
     print(f'正在查詢第{index}筆資料')
@@ -66,6 +66,7 @@ for id in f:
         user_info_list.append( str(user.last_ip) ) #上次登入ip
         user_info_list.append( str(user.last_login) ) #上次登入日期
         user_info_list.append( str(verify_text) ) #認證
+        user_info_list.append( str(user.money) ) #$$$
         user_info_list.append( str(signature_file_first_line) ) #認證
         user_info_list.append( str(ipLocation(user.last_ip)) ) #位置
 
@@ -76,7 +77,7 @@ for id in f:
     index = index + 1
 
 
-to_csv(output_rows, '06_account_checker.csv')
+to_csv(output_rows, '06_account_checker_with_geolocation.csv')
 
 # '  此人違規 尚未繳交罰單 (已累計 1 次)'
 # '\n此人違規 尚未繳交罰單 (已累計 1 次)'
